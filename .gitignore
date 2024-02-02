@@ -1,0 +1,36 @@
+# Arquivos de sistema
+*.DS_Store
+
+# Byte-compiled / optimized / hashed files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+__init__.pyc
+__init__.pyo
+
+# Ambiente virtual
+venv/
+env/
+
+# Arquivos de configuração
+*.log
+*.pot
+*.pyc
+*.pyo
+
+# Arquivos temporários
+*.swp
+
+# Arquivos específicos do Django
+*.sqlite3
+db.sqlite3
+media/
+static/
+/data/
+*.pyc
+gunicorn-error-log
+
+# Arquivos de configuração local
+settings_local.py
