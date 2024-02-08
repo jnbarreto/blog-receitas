@@ -1,5 +1,5 @@
 # Arquivos de sistema
-*.DS_Store
+.DS_Store
 
 # Byte-compiled / optimized / hashed files
 __pycache__/
@@ -28,10 +28,18 @@ env/
 db.sqlite3
 media/
 static/
-/data/
 *.pyc
-gunicorn-error-log
-.env
 
 # Arquivos de configuração local
 settings_local.py
+
+# Arquivos e diretórios do Docker
+.dockerignore
+.docker/
+
+# Diretório onde os arquivos estáticos coletados são armazenados
+staticfiles/
+
+# Arquivos e diretórios específicos do Docker Compose
+docker-compose.yml
+docker-compose.override.yml
