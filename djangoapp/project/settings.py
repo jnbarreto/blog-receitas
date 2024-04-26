@@ -42,6 +42,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'rest_framework',
+    'corsheaders',
+
+    # models
+    'publications',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +57,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:4200',
 ]
 
 ROOT_URLCONF = "project.urls"
@@ -108,6 +118,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',  # Autenticação básica
+        'rest_framework.authentication.SessionAuthentication',  # Autenticação por sessão
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',  # Permissão padrão
+    ],
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
